@@ -17,12 +17,14 @@
           </div>
 
           <div class="p-4 border-t border-b text-xs text-gray-700">
-            <span class="flex items-start mb-1"> id: {{ product.id }} </span>
+            <span class="flex items-start mb-1">
+              date: {{ product.date | dayAgo }}
+            </span>
             <span class="flex items-start mb-1">
               size: {{ product.size }}
             </span>
             <span class="flex items-start font-bold">
-              {{ product.price / 100 | currency: "$" }}
+              {{ product.price / 100 | currency: "USD" }}
             </span>
           </div>
         </div>
