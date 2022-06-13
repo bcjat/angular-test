@@ -3,6 +3,7 @@
     class="flex flex-row flex-wrap justify-between w-full text-end border-b border-grey p-4"
   >
     <div class="flex">Product List</div>
+    <div class="flex font-bold text-lg" *ngIf="wait | async">Waiting...</div>
     <div class="flex">
       <select
         class="form-select form-select-sm appearance-none block w-full px-2 py-1 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -16,7 +17,7 @@
       </select>
     </div>
   </header>
-  <main class="flex-1 overflow-y-scroll">
+  <main class="flex-1 overflow-y-scroll" (loadMore)="loadMoreProducts()">
     <div class="flex flex-col">
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 p-2">
         <div
