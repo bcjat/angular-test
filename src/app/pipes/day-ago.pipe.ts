@@ -8,7 +8,7 @@ export class DayAgoPipe implements PipeTransform {
     if (value) {
       const seconds = Math.floor((+new Date() - +new Date(value)) / 1000);
       const intervals: { [key: string]: number } = {
-        day: 86400,
+        day: 86400, // we can add more intervals like week, month, years and so on.
       };
       let counter;
       for (const i in intervals) {
